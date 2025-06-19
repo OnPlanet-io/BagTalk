@@ -1,17 +1,40 @@
 @import "tailwindcss";
 
+/* 1. Define your core CSS variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --brand-green: #00C853;
+  --brand-green-hover: #00E868;
+  --text-dark: #1a1a1a;
+  --text-light: #555555;
+  --bg-color: #f7f9fc;
+
+  /* Font stacks */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+
+  /* Base background/text for light mode */
+  --background: var(--bg-color);
+  --foreground: var(--text-dark);
 }
 
+/* 2. Map into Tailwind “inline” theme tokens */
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-hover: var(--brand-green-hover);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
+
+  /* Fonts */
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 }
 
+/* 3. Dark-mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +42,18 @@
   }
 }
 
+/* 4. Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins);
 }
+
+/* 5. You can now use e.g. 
+     bg-[var(--color-background)]
+     text-[var(--color-foreground)]
+     bg-[var(--color-brand-green)]
+     hover:bg-[var(--color-brand-green-hover)]
+     text-[var(--color-text-light)]
+   in your Tailwind classes anywhere.
+*/
