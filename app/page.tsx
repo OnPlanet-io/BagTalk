@@ -145,7 +145,7 @@ export default function BagTalkLanding(): JSX.Element {
 
             {/* Combined Feature: AI Wallet Intel */}
             <section id="intel" className="py-20 md:py-28">
-                <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-12 md:gap-36 lg:gap-48 xl:gap-56 items-center">
+                <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-12 md:gap-36 lg:gap-48 xl:gap-0 items-center">
                     <div>
                         <h3 className="text-xl md:text-2xl font-semibold">AI Wallet Intel</h3>
                         <p className="mt-3 text-slate-600">Explainable insights highlight strengths, weaknesses, and what actually drives performance for any analyzed wallet.</p>
@@ -176,10 +176,14 @@ export default function BagTalkLanding(): JSX.Element {
 
             {/* Data‑Driven Social Synergy */}
             <section className="py-24 md:py-32">
-                <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-12 md:gap-46 lg:gap-40 xl:gap-0 items-center">
-                    <div >
+                <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-12 md:gap-36 lg:gap-0 xl:gap-0 items-center">
+                    {/* Images — second on mobile, first on md+ */}
+                    <div className="order-2 md:order-1">
                         <div className="relative h-[520px] md:h-[560px]">
-                            <div className="absolute bottom-0 left-1/2 z-0" style={{ transform: 'translateY(-5%) translateX(-135%) rotate(0deg)', transformOrigin: 'top center' }}>
+                            <div
+                                className="absolute bottom-0 left-1/2 z-0"
+                                style={{ transform: 'translateY(-5%) translateX(-135%) rotate(0deg)', transformOrigin: 'top center' }}
+                            >
                                 <PhoneFrame title="" src={assets.slides[2]} alt="App screen (background)" className="w-[220px] md:w-[260px]" />
                             </div>
                             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
@@ -188,10 +192,13 @@ export default function BagTalkLanding(): JSX.Element {
                         </div>
                     </div>
 
-                    {/* Right: text content */}
-                    <div className="self-center">
-                        <h3 className="text-xl md:text-2xl font-semibold">Data‑Driven Social Synergy</h3>
-                        <p className="mt-3 text-slate-600">Separate hype from skill. BagTalk is a dynamic crypto community where novices and experts connect, learn, and uncover market trends before they happen, giving traders and market makers a predictive edge.</p>
+                    {/* Text — first on mobile, second on md+ */}
+                    <div className="self-center order-1 md:order-2">
+                        <h3 className="text-xl md:text-2xl font-semibold">Data-Driven Social Synergy</h3>
+                        <p className="mt-3 text-slate-600">
+                            Separate hype from skill. BagTalk is a dynamic crypto community where novices and experts connect, learn, and uncover
+                            market trends before they happen, giving traders and market makers a predictive edge.
+                        </p>
                         <ul className="mt-5 space-y-2 text-slate-600 text-sm list-disc pl-5">
                             <li>Novices learn from top traders, accelerating growth</li>
                             <li>Social interactions reveal emerging trends</li>
@@ -231,23 +238,27 @@ export default function BagTalkLanding(): JSX.Element {
 
             {/* Footer */}
             <footer className="py-10 text-slate-600">
-                <div className="mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <p className="text-sm">© {new Date().getFullYear()} BagTalk. All rights reserved.</p>
-                    <div className="flex items-center gap-4">
+                <div className="mx-auto max-w-7xl px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                    <p className="text-[11px] sm:text-xs md:text-sm text-center md:text-left">
+                        © {new Date().getFullYear()} BagTalk. All rights reserved.
+                    </p>
+
+                    <div className="flex items-center gap-3 md:gap-4">
                         <a
                             href="https://x.com/bagtalktown"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-black text-white text-sm font-medium shadow hover:opacity-90 focus:outline-none focus:ring-2"
+                            className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-2 bg-black text-white text-[11px] md:text-sm font-medium shadow hover:opacity-90 focus:outline-none focus:ring-2 leading-none"
                             aria-label="Follow BagTalk on X"
                         >
                             <XIcon className="h-4 w-4" />
-                            <span>Follow on X</span>
+                            <span>Follow us</span>
                         </a>
-                        <div className="flex gap-4 text-sm">
-                            <a href="#" className="hover:text-slate-900">Privacy</a>
-                            <a href="#" className="hover:text-slate-900">Terms</a>
-                            <a href="#" className="hover:text-slate-900">Contact</a>
+
+                        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] md:text-sm">
+                            {/* <a href="#" className="hover:text-slate-900 leading-none">Privacy</a> */}
+                            {/* <a href="#" className="hover:text-slate-900 leading-none">Terms</a> */}
+                            <a href="mailto:info@bagtalk.io" className="hover:text-slate-900 leading-none">Contact</a>
                         </div>
                     </div>
                 </div>
