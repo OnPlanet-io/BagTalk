@@ -1,20 +1,20 @@
-// app/layout.tsx
 import './globals.css';
-import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
-export const metadata: Metadata = {
-  title: 'BagTalk — Coming Soon',
-  description: 'Coming soon page for BagTalk',
+export const metadata = {
+  title: 'BagTalk — Verify trading skill with AI',
+  description: 'Wallet activity → objective scores & AI insights.',
+  themeColor: '#F5F7FB', // your THEME_BG
+  openGraph: { title: 'BagTalk', description: '...', images: ['/images/og.png'] },
+  twitter: { card: 'summary_large_image', site: '@bagtalktown' },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
