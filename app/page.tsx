@@ -23,10 +23,12 @@ type Assets = {
 const assets: Assets = {
     logo: '/images/BAGTALK-04.png',
     slides: [
-        '/images/slide1.png',
-        '/images/slide2.png',
-        '/images/slide3.png',
-        '/images/slide4.png',
+        '/images/image2.png',
+        '/images/image1.png',
+        // '/images/slide1.png',
+        // '/images/slide2.png',
+        // '/images/slide3.png',
+        // '/images/slide4.png',
     ],
     verified: '/images/verified.png'
 };
@@ -108,7 +110,7 @@ export default function BagTalkLanding(): JSX.Element {
 
             {/* Hero */}
             <section className="relative overflow-hidden py-24 md:py-32">
-                <div className="mx-auto max-w-7xl px-6 md:px-8  grid md:grid-cols-2 gap-12 md:gap-36 lg:gap-48 xl:gap-56 items-center">
+                <div className="mx-auto max-w-7xl px-6 md:px-8  grid md:grid-cols-2 gap-12 md:gap-36 lg:gap-0 xl:gap-0 items-center">
                     <div>
                         <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm">
                             <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: ACCENT }} /> Pre‑launch
@@ -157,17 +159,16 @@ export default function BagTalkLanding(): JSX.Element {
                         </ul>
                     </div>
                     <div>
-                        <div className="relative h-[520px] md:h-[560px]">
-                            {/* Back/offset screen (peeks from right) */}
-                            {/* <div className="absolute bottom-0 left-1/2 z-0" style={{ transform: 'translateX(-22%) rotate(6deg)', transformOrigin: 'top center' }}> */}
-                            <div className="absolute bottom-0 left-1/2 z-0" style={{ transform: 'translateY(-5%) translateX(-90%) rotate(-6deg)', transformOrigin: 'top center' }}>
+                        <div className="relative h-[520px] md:h-[600px]">
+
+                            <img src={assets.slides[0]} alt="App screen (background)" className="h-full w-full object-contain select-none" draggable={false} />
+
+                            {/* <div className="absolute bottom-0 left-1/2 z-0" style={{ transform: 'translateY(-5%) translateX(-90%) rotate(-6deg)', transformOrigin: 'top center' }}>
                                 <PhoneFrame title="" src={assets.slides[0]} alt="App screen (background)" className="w-[220px] md:w-[260px]" />
                             </div>
-                            {/* Front/straight screen */}
-                            {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10"> */}
                             <div className="absolute bottom-0 left-1/2 z-0" style={{ transform: 'translateX(-8%) rotate(6deg)', transformOrigin: 'top center' }}>
                                 <PhoneFrame title="" src={assets.slides[1]} alt="App screen (foreground)" className="w-[240px] md:w-[280px]" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -180,7 +181,9 @@ export default function BagTalkLanding(): JSX.Element {
                     {/* Images — second on mobile, first on md+ */}
                     <div className="order-2 md:order-1">
                         <div className="relative h-[520px] md:h-[560px]">
-                            <div
+                            <img src={assets.slides[1]} alt="App screen (background)" className="h-full w-full object-contain select-none" draggable={false} />
+
+                            {/* <div
                                 className="absolute bottom-0 left-1/2 z-0"
                                 style={{ transform: 'translateY(-5%) translateX(-135%) rotate(0deg)', transformOrigin: 'top center' }}
                             >
@@ -188,7 +191,7 @@ export default function BagTalkLanding(): JSX.Element {
                             </div>
                             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
                                 <PhoneFrame title="" src={assets.slides[3]} alt="App screen (foreground)" className="w-[240px] md:w-[280px]" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -288,7 +291,7 @@ function AnimatedMesh(): JSX.Element {
 function HeroVerifiedImage() {
 
     return (
-        <div className="relative mx-auto w-[320px] md:w-[460px]">
+        <div className="relative mx-auto w-[320px] md:w-[550px]">
             {/* Square image box — NO border */}
             <div
                 className="relative rounded-2xl"
