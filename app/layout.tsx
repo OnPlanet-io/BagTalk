@@ -4,9 +4,12 @@ import { Inter } from 'next/font/google';
 export const metadata = {
   title: 'BagTalk — Verify trading skill with AI',
   description: 'Wallet activity → objective scores & AI insights.',
-  themeColor: '#F5F7FB', // your THEME_BG
   openGraph: { title: 'BagTalk', description: '...', images: ['/images/og.png'] },
   twitter: { card: 'summary_large_image', site: '@bagtalktown' },
+};
+
+export const viewport = {
+  themeColor: '#F5F7FB', // your THEME_BG
 };
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
